@@ -6,7 +6,7 @@ public class Avion {
 	Integer idAvion;
 	String modelo;
 	String matricula;
-	List<Avion> listaAsiento;
+	List<Asiento> listaAsiento;
 	
 	
 	public Integer getIdAvion() {
@@ -27,15 +27,15 @@ public class Avion {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	public List<Avion> getListaAsiento() {
+	public List<Asiento> getListaAsiento() {
 		return listaAsiento;
 	}
-	public void setListaAsiento(List<Avion> listaAsiento) {
+	public void setListaAsiento(List<Asiento> listaAsiento) {
 		this.listaAsiento = listaAsiento;
 	}
 	
 	
-	public Avion(Integer idAvion, String modelo, String matricula, List<Avion> listaAsiento) {
+	public Avion(Integer idAvion, String modelo, String matricula, List<Asiento> listaAsiento) {
 		this.idAvion = idAvion;
 		this.modelo = modelo;
 		this.matricula = matricula;

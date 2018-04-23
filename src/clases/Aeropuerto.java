@@ -40,5 +40,4 @@ public class Aeropuerto {
 		this.codigo = codigo;
 	}
 	
-	
 }
