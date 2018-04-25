@@ -1,9 +1,8 @@
-package Clases;
+package clases;
 
 import java.time.LocalDate;
 
 public class Piloto {
-	
 	Integer idPiloto;
 	String apellido;
 	String nombres;
@@ -52,6 +51,7 @@ public class Piloto {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
+	
+	
+	
 }
-	
-	

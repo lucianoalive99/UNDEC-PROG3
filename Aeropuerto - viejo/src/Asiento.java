@@ -1,4 +1,4 @@
-package Clases;
+package clases;
 
 public class Asiento {
 	Integer idAsiento;
@@ -23,5 +23,6 @@ public class Asiento {
 		this.idAsiento = idAsiento;
 		this.numeroAsiento = numeroAsiento;
 	}
-
+	
+	
 }

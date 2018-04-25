@@ -1,4 +1,4 @@
-package Clases;
+package clases;
 
 public class Asignacion {
 	Pasajero pasajero;
@@ -34,5 +34,5 @@ public class Asignacion {
 		this.codigoAsignacion = codigoAsignacion;
 	}
 	
-
+	
 }

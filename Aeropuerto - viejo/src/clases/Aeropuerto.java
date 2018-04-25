@@ -1,4 +1,4 @@
-package Clases;
+package clases;
 
 public class Aeropuerto {
 	Integer idAeropuerto;
@@ -43,5 +43,5 @@ public class Aeropuerto {
 	public String mostrarAeropuertos() {
 		return "Aeropuerto: " + getNombre() + " - " + ciudad.devolverCiudad() + " - " + getCodigo();
 	}
-
+	
 }

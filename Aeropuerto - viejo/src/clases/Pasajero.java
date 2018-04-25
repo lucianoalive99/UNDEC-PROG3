@@ -1,8 +1,6 @@
-package Clases;
+package clases;
 
 public class Pasajero {
-
-
 	Integer idPasajero;
 	String CUIL;
 	String apellido;
@@ -53,5 +51,4 @@ public class Pasajero {
 	}
 	
 	
-
 }

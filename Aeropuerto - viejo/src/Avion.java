@@ -1,10 +1,8 @@
-package Clases;
+package clases;
 
 import java.util.List;
 
 public class Avion {
-	
-	
 	Integer idAvion;
 	String modelo;
 	String matricula;
@@ -43,5 +41,7 @@ public class Avion {
 		this.matricula = matricula;
 		this.listaAsiento = listaAsiento;
 	}
-
+	
+	
+	
 }

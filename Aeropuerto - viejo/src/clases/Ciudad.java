@@ -1,8 +1,6 @@
-package Clases;
+package clases;
 
 public class Ciudad {
-	
-	
 	Integer idCiudad;
 	String nombre;
 	String codigoPostal;
@@ -38,5 +36,6 @@ public class Ciudad {
 	public String devolverCiudad() {
 		return getNombre();
 	}
-
+	
+	
 }
