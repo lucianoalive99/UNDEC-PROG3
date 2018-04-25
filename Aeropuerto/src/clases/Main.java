@@ -3,19 +3,24 @@ package clases;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
 	private List<Aeropuerto> nuevosAeropuertos = new ArrayList<Aeropuerto>();
 	
-	public static void CargarNuevoAeropuerto() {
+	//public static void CargarNuevoAeropuerto() {
+		public static void main(String[] args) {
 		
+		int numeroCiudades;
 		List<Asiento> asientoAvion1 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion2 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion3 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion4 = new ArrayList<Asiento>();
 		List<Piloto> piloto2443 = new ArrayList<Piloto>();
 		List<Asignacion> pasajeros2443 = new ArrayList<Asignacion>();
+		List<Ciudad> listaCiudades = new ArrayList<Ciudad>();
+		List<Aeropuerto> listaAeropuertos = new ArrayList<Aeropuerto>();
 		
 		//CARGA DE DATOS PARA PRUEBA
 			//CARGA DE LAS CIUDADES
@@ -23,22 +28,27 @@ public class Main {
 		Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
 		Ciudad ciudad4 = new Ciudad(4,"Tucumán","4000");
+			//CARGA DE LAS CIUDADES EN UNA LISTA
+		listaCiudades.add(ciudad1);
+		listaCiudades.add(ciudad2);
+		listaCiudades.add(ciudad3);
+		listaCiudades.add(ciudad4);
 			//CARGA DE LOS AEROPUERTOS
 		Aeropuerto aeropuerto1 = new Aeropuerto(1,"Aeropuerto Capitán Vicente Almandos Amonacid",ciudad1,"IRJ");
 		Aeropuerto aeropuerto2 = new Aeropuerto(2,"Aeropuerto Buenos Aires Jorge Newbery",ciudad2,"AEP");
 		Aeropuerto aeropuerto3 = new Aeropuerto(2,"Aeropuerto El Plumerillo",ciudad3,"MDZ");
 		Aeropuerto aeropuerto4 = new Aeropuerto(2,"Aeropuerto Benjamín Matienzo",ciudad4,"TUC");
+			//CARGA LISTA DE AEROPUERTOS
+		listaAeropuertos.add(aeropuerto1);
+		listaAeropuertos.add(aeropuerto2);
+		listaAeropuertos.add(aeropuerto3);
+		listaAeropuertos.add(aeropuerto4);
 			//CARGA DE LOS PASAJEROS
 		Pasajero pasajero1 = new Pasajero(1,"20123456784","Ramírez","Ramiro Ramón","12345678");
 		Pasajero pasajero2 = new Pasajero(2,"20102030404","Fernández","Fernando Fermín","10203040");
 		Pasajero pasajero3 = new Pasajero(3,"20987654324","Martínez","Martín Marcos","98765432");
 		Pasajero pasajero4 = new Pasajero(4,"20198273644","Rodríguez","Rodrigo Rogelio","19827364");
-			//ASIGNACION DE LOS PASAJEROS
-		Asignacion asignacion1 = new Asignacion(pasajero1,asientoAvion4.get(43),"AR2443100420182012345678443");
-		Asignacion asignacion2 = new Asignacion(pasajero4,asientoAvion4.get(41),"AR2443100420182019827364441");
-			//CARGA DE LAS ASIGNACIONES
-		pasajeros2443.add(asignacion1);
-		pasajeros2443.add(asignacion2);
+			
 			//CARGA DE LAS AEROLINEAS
 		Aerolinea aerolinea1 = new Aerolinea(1,"Aerolíneas Argentinas");
 		Aerolinea aerolinea2 = new Aerolinea(2,"Austral");
@@ -99,53 +109,53 @@ public class Main {
 		Asiento asiento44 = new Asiento(44,"K2");
 			//CARGA DE LISTAS CON ASIENTOS POR AVION
 			//AVION 1
-		asientoAvion1.add(1, asiento1);
-		asientoAvion1.add(2, asiento2);
-		asientoAvion1.add(3, asiento3);
-		asientoAvion1.add(4, asiento4);
-		asientoAvion1.add(5, asiento5);
-		asientoAvion1.add(6, asiento6);
-		asientoAvion1.add(7, asiento7);
-		asientoAvion1.add(8, asiento8);
-		asientoAvion1.add(9, asiento9);
-		asientoAvion1.add(10, asiento10);
-		asientoAvion1.add(11, asiento11);
-		asientoAvion1.add(12, asiento12);
+		asientoAvion1.add(asiento1);
+		asientoAvion1.add(asiento2);
+		asientoAvion1.add(asiento3);
+		asientoAvion1.add(asiento4);
+		asientoAvion1.add(asiento5);
+		asientoAvion1.add(asiento6);
+		asientoAvion1.add(asiento7);
+		asientoAvion1.add(asiento8);
+		asientoAvion1.add(asiento9);
+		asientoAvion1.add(asiento10);
+		asientoAvion1.add(asiento11);
+		asientoAvion1.add(asiento12);
 			//AVION 2
-		asientoAvion2.add(13, asiento13);
-		asientoAvion2.add(14, asiento14);
-		asientoAvion2.add(15, asiento15);
-		asientoAvion2.add(16, asiento16);
-		asientoAvion2.add(17, asiento17);
-		asientoAvion2.add(18, asiento18);
-		asientoAvion2.add(19, asiento19);
-		asientoAvion2.add(20, asiento20);
-		asientoAvion2.add(21, asiento21);
-		asientoAvion2.add(22, asiento22);
-		asientoAvion2.add(23, asiento23);
-		asientoAvion2.add(24, asiento24);
+		asientoAvion2.add(asiento13);
+		asientoAvion2.add(asiento14);
+		asientoAvion2.add(asiento15);
+		asientoAvion2.add(asiento16);
+		asientoAvion2.add(asiento17);
+		asientoAvion2.add(asiento18);
+		asientoAvion2.add(asiento19);
+		asientoAvion2.add(asiento20);
+		asientoAvion2.add(asiento21);
+		asientoAvion2.add(asiento22);
+		asientoAvion2.add(asiento23);
+		asientoAvion2.add(asiento24);
 			//AVION 3
-		asientoAvion3.add(25, asiento25);
-		asientoAvion3.add(26, asiento26);
-		asientoAvion3.add(27, asiento27);
-		asientoAvion3.add(28, asiento28);
-		asientoAvion3.add(29, asiento29);
-		asientoAvion3.add(30, asiento30);
-		asientoAvion3.add(31, asiento31);
-		asientoAvion3.add(32, asiento32);
-		asientoAvion3.add(33, asiento33);
-		asientoAvion3.add(34, asiento34);
-		asientoAvion3.add(35, asiento35);
-		asientoAvion3.add(36, asiento36);
-		asientoAvion3.add(37, asiento37);
-		asientoAvion3.add(38, asiento38);
+		asientoAvion3.add(asiento25);
+		asientoAvion3.add(asiento26);
+		asientoAvion3.add(asiento27);
+		asientoAvion3.add(asiento28);
+		asientoAvion3.add(asiento29);
+		asientoAvion3.add(asiento30);
+		asientoAvion3.add(asiento31);
+		asientoAvion3.add(asiento32);
+		asientoAvion3.add(asiento33);
+		asientoAvion3.add(asiento34);
+		asientoAvion3.add(asiento35);
+		asientoAvion3.add(asiento36);
+		asientoAvion3.add(asiento37);
+		asientoAvion3.add(asiento38);
 			//AVION 4
-		asientoAvion4.add(39, asiento39);
-		asientoAvion4.add(40, asiento40);
-		asientoAvion4.add(41, asiento41);
-		asientoAvion4.add(42, asiento42);
-		asientoAvion4.add(43, asiento43);
-		asientoAvion4.add(44, asiento44);
+		asientoAvion4.add(asiento39);
+		asientoAvion4.add(asiento40);
+		asientoAvion4.add(asiento41);
+		asientoAvion4.add(asiento42);
+		asientoAvion4.add(asiento43);
+		asientoAvion4.add(asiento44);
 		
 				
 			//CARGA DE AVIONES
@@ -154,14 +164,35 @@ public class Main {
 		Avion avion3 = new Avion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
 		Avion avion4 = new Avion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
 		
+			//ASIGNACION DE LOS PASAJEROS
+		Asignacion asignacion1 = new Asignacion(pasajero1,asientoAvion4.set(1, asiento43),"AR2443100420182012345678443");
+		Asignacion asignacion2 = new Asignacion(pasajero4,asientoAvion4.set(2, asiento41),"AR2443100420182019827364441");
+			//CARGA DE LAS ASIGNACIONES
+		pasajeros2443.add(asignacion1);
+		pasajeros2443.add(asignacion2);
 			//CARGA DE VUELOS
 		Vuelo vuelo1 = new Vuelo("AR2443",aeropuerto1,LocalDateTime.of(2018, 04, 10, 21, 10),aeropuerto2,LocalDateTime.of(2018, 04, 10, 22, 45),aerolinea2,piloto2443,avion4,pasajeros2443);
-			
+		
+		
+			//MUESTRA DE LAS CIUDADES
+		numeroCiudades = listaCiudades.size();
+		System.out.println(numeroCiudades);
+		for(Ciudad ciu : listaCiudades) {
+			System.out.println(ciu.devolverCiudad());
+		}
+		
+			//MUESTRA DE LOS AEROPUERTOS
+		int numeroAeropuerto = listaAeropuertos.size();
+		System.out.println(numeroAeropuerto);
+		for(Aeropuerto aero : listaAeropuertos) {
+			System.out.println(aero.mostrarAeropuertos());
+		}
+		
+			//DEVOLVER VUELO
+		
+		System.out.println(vuelo1.devolverVuelo());
+		
 	}
 
-	private static LocalDate LocalDate(int i, Class<Months> class1, int j) {
-		// TODO Apéndice de método generado automáticamente
-		return null;
-	}
-
+	
 }

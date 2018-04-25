@@ -33,5 +33,9 @@ public class Ciudad {
 		this.codigoPostal = codigoPostal;
 	}
 	
+	public String devolverCiudad() {
+		return getNombre();
+	}
+	
 	
 }

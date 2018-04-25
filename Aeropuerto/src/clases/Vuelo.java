@@ -87,7 +87,11 @@ public class Vuelo {
 		this.pasajeros = pasajeros;
 	}
 	
-	
+	public String devolverVuelo() {
+		return getCodigoVuelo() + " - " + avion.getModelo() + 
+				salida.mostrarAeropuertos() + 
+				arribo.mostrarAeropuertos();
+	}
 	
 	
 }

@@ -40,4 +40,8 @@ public class Aeropuerto {
 		this.codigo = codigo;
 	}
 	
+	public String mostrarAeropuertos() {
+		return "Aeropuerto: " + getNombre() + " - " + ciudad.devolverCiudad() + " - " + getCodigo();
+	}
+	
 }
