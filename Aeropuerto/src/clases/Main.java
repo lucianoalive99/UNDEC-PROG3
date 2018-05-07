@@ -191,6 +191,7 @@ public class Main {
 			//DEVOLVER VUELO
 		
 		System.out.println(vuelo1.devolverVuelo());
+		System.out.println(vuelo1.duracionDeVueloMinutos());
 		
 	}
 

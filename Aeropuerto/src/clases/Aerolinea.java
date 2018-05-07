@@ -32,6 +32,9 @@ public class Aerolinea {
 			this.nombre = nombre;
 		}
 		
+		public String devolverAerolinea() {
+			return getNombre();
+		}
 	
 
 }

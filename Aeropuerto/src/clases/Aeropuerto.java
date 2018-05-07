@@ -41,7 +41,19 @@ public class Aeropuerto {
 	}
 	
 	public String mostrarAeropuertos() {
-		return "Aeropuerto: " + getNombre() + " - " + ciudad.devolverCiudad() + " - " + getCodigo();
+		return getNombre() + " - " + ciudad.devolverCiudad() + " - " + getCodigo();
+	}
+	
+	public String mostrarCodigoAeropuerto() {
+		return getCodigo();
+	}
+	
+	public String mostrarNombreAeropuerto() {
+		return getNombre();
+	}
+	
+	public Ciudad mostrarCiudadAeropuerto() {
+		return getCiudad();
 	}
 
 }
