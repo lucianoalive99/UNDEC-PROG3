@@ -52,6 +52,8 @@ public class Piloto {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
+	
+	
 }
 	
 	

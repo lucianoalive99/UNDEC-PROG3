@@ -2,12 +2,15 @@ package Clases;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class Vuelo {
 	
@@ -176,5 +179,69 @@ public class Vuelo {
 		
 	}
 	
+	public void devolverListaDeAsignaciones() {
+		boolean señal = false;
+		System.out.println("Detalle de Asignaciones - Vuelo " + getCodigoVuelo());
+		for(Asiento	asientoVuelo : avion.getListaAsiento()) {
+			for(Asignacion pasajero : pasajeros) {
+				if(asientoVuelo.getIdAsiento() == pasajero.getAsiento().getIdAsiento()) {
+					señal = true;
+					System.out.println( "Asiento " + asientoVuelo.getNumeroAsiento() + " - Ocupado. ");
+					break;
+				}
+				else
+				{
+					señal = false;
+				}
+				
+			}
+			if(señal == false) {
+				System.out.println("Asiento " + asientoVuelo.getNumeroAsiento() + " - Libre.");
+				
+			}
+		}
+	}
 	
+	
+	public void pilotosMayoresA40() {
+		
+		/*DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate fechaNac = LocalDate.parse(getPilotos(), fmt);
+		LocalDate ahora = LocalDate.now();
+
+		Period periodo = Period.between(fechaNac, ahora);
+		System.out.printf("Tu edad es: %s años, %s meses y %s días",
+		                    periodo.getYears(), periodo.getMonths(), periodo.getDays());*/
+	
+
+		boolean señal = false;
+		System.out.println("Detalle de Pilotos mayoes a 40 años:");
+		for(Piloto	pilotoVuelo : getPilotos()) {
+			DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate fechaNac = pilotoVuelo.getFechaNacimiento();
+			LocalDate ahora = LocalDate.now();
+
+			Period periodo = Period.between(fechaNac, ahora);
+			if (periodo.getYears() > 40) {
+				System.out.printf("Tu edad es: %s años",
+			                    periodo.getYears());
+			}
+			//for(Asignacion pasajero : pasajeros) {
+				/*if(pilotoVuelo.getFechaNacimiento()) {
+					señal = true;
+					System.out.println( "Asiento " + asientoVuelo.getNumeroAsiento() + " - Ocupado. ");
+					break;
+				}
+				else
+				{
+					señal = false;
+				}
+				
+			//}
+			if(señal == false) {
+				System.out.println("Asiento " + asientoVuelo.getNumeroAsiento() + " - Libre.");
+				
+			}*/
+		}
+	}
 }

@@ -2,15 +2,19 @@ package Clases;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Collections;
+
 
 public class Main {
 	private List<Aeropuerto> nuevosAeropuertos = new ArrayList<Aeropuerto>();
 	
 	//public static void CargarNuevoAeropuerto() {
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		int numeroCiudades;
 		List<Asiento> asientoAvion1 = new ArrayList<Asiento>();
@@ -21,6 +25,8 @@ public class Main {
 		List<Asignacion> pasajeros2443 = new ArrayList<Asignacion>();
 		List<Ciudad> listaCiudades = new ArrayList<Ciudad>();
 		List<Aeropuerto> listaAeropuertos = new ArrayList<Aeropuerto>();
+		List<Piloto> listaDePilotos = new ArrayList<Piloto>();
+		List<Piloto> pilotosMayoresA40 = new ArrayList<Piloto>();
 		
 		//CARGA DE DATOS PARA PRUEBA
 			//CARGA DE LAS CIUDADES
@@ -62,6 +68,10 @@ public class Main {
 			//ASIGANCION DE PILOTOS A LISTA
 		piloto2443.add(piloto1);
 		piloto2443.add(piloto2);
+		listaDePilotos.add(piloto1);
+		listaDePilotos.add(piloto2);
+		listaDePilotos.add(piloto3);
+		listaDePilotos.add(piloto4);
 			//CARGA DE ASIENTOS
 		Asiento asiento1 = new Asiento(1,"A1");
 		Asiento asiento2 = new Asiento(2,"B1");
@@ -192,8 +202,32 @@ public class Main {
 		
 		System.out.println(vuelo1.devolverVuelo());
 		System.out.println(vuelo1.duracionDeVueloMinutos());
-		
-	}
 
-	
+
+			// pilotos mayores a 40
+		//vuelo1.pilotosMayoresA40();
+		System.out.println("Detalle de Pilotos mayoes a 40 años:");
+		for(Piloto	pilotoVuelo : listaDePilotos) {
+			DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate fechaNac = pilotoVuelo.getFechaNacimiento();
+			LocalDate ahora = LocalDate.now();
+
+			Period periodo = Period.between(fechaNac, ahora);
+			if (periodo.getYears() > 40) {
+				pilotosMayoresA40.add(pilotoVuelo);
+				}
+			}
+		
+		//Collections.sort(pilotosMayoresA40, new OrdenarPilotosPorEdad());
+		Collections.sort(pilotosMayoresA40, new OrdenarPilotosPorEdad());
+		for(Piloto pilotos : pilotosMayoresA40) {
+			LocalDate fechaNac = pilotos.getFechaNacimiento();
+			LocalDate ahora = LocalDate.now();
+
+			Period periodo = Period.between(fechaNac, ahora);
+			
+			System.out.println(pilotos.getApellido()+","+ pilotos.getNombres() + " - " + periodo.getYears());
+		}
+	}
+		
 }
