@@ -100,35 +100,7 @@ public class Vuelo {
 	
 	public long duracionDeVueloHoras() {
 		
-		//SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd H:m:s");
-		 
-        //Date fechaInicial=dateFormat.parse("2016-02-14 10:00:00");
-       // Date fechaFinal=dateFormat.parse("2016-02-15 11:10:10");
- 
-       /* int diferencia=(int) ((fechaHoraArribo.)-fechaHoraSalida.getTime())/1000);
- 
-        int dias=0;
-        int horas=0;
-        int minutos=0;
-        if(diferencia>86400) {
-            dias=(int)Math.floor(diferencia/86400);
-            diferencia=diferencia-(dias*86400);
-        }
-        if(diferencia>3600) {
-            horas=(int)Math.floor(diferencia/3600);
-            diferencia=diferencia-(horas*3600);
-        }
-        if(diferencia>60) {
-            minutos=(int)Math.floor(diferencia/60);
-            diferencia=diferencia-(minutos*60);
-        }
-        System.out.println("Hay "+dias+" dias, "+horas+" horas, "+minutos+" minutos y "+diferencia+" segundos de diferencia");*/
 		
-		/*LocalTime startLocalTime = LocalTime.of(fechaHoraSalida.getHour(),fechaHoraSalida.getMinute());
-        LocalTime endLocalTime = startLocalTime.plus((Duration.ofHours(fechaHoraArribo.getHour() + Duration.ofMinutes(fechaHoraArribo.getMinute()))));  // 11:30
- 
-        long diffSeconds = Duration.between(startLocalTime, endLocalTime).get();
-        return diffSeconds; // 10800 seconds*/
     
 		LocalDateTime d1 = LocalDateTime.of(fechaHoraSalida.getYear(), fechaHoraSalida.getMonth(), fechaHoraSalida.getDayOfMonth(), fechaHoraSalida.getHour(), fechaHoraSalida.getMinute());
 		LocalDateTime d2 = LocalDateTime.of(fechaHoraArribo.getYear(), fechaHoraArribo.getMonth(), fechaHoraArribo.getDayOfMonth(), fechaHoraArribo.getHour(), fechaHoraArribo.getMinute());

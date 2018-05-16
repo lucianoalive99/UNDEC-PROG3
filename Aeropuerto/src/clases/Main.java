@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Collections;
+import Gestores.GestorCiudad;
 
 
 public class Main {
@@ -15,8 +16,8 @@ public class Main {
 	
 	//public static void CargarNuevoAeropuerto() {
 	public static void main(String[] args) {
-		
-		int numeroCiudades;
+		GestorCiudad gestorCiudad = new GestorCiudad();
+		/*int numeroCiudades;
 		List<Asiento> asientoAvion1 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion2 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion3 = new ArrayList<Asiento>();
@@ -28,14 +29,17 @@ public class Main {
 		List<Piloto> listaDePilotos = new ArrayList<Piloto>();
 		List<Piloto> pilotosMayoresA40 = new ArrayList<Piloto>();
 		
+		GestorCiudad gestorCiudad = new GestorCiudad();
 		//CARGA DE DATOS PARA PRUEBA
 			//CARGA DE LAS CIUDADES
 		Ciudad ciudad1 = new Ciudad(1,"La Rioja","5360");
+		gestorCiudad.crearCiudad(1,"La Rioja","5360");
+		System.out.println(gestorCiudad.mostrarCiudades());
 		Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
 		Ciudad ciudad4 = new Ciudad(4,"Tucumán","4000");
 			//CARGA DE LAS CIUDADES EN UNA LISTA
-		listaCiudades.add(ciudad1);
+		//listaCiudades.add();
 		listaCiudades.add(ciudad2);
 		listaCiudades.add(ciudad3);
 		listaCiudades.add(ciudad4);
@@ -227,7 +231,9 @@ public class Main {
 			Period periodo = Period.between(fechaNac, ahora);
 			
 			System.out.println(pilotos.getApellido()+","+ pilotos.getNombres() + " - " + periodo.getYears());
-		}
+		}*/
+		gestorCiudad.crearCiudad(1,"La Rioja","5360");
+		gestorCiudad.mostrarCiudades();
 	}
 		
 }
