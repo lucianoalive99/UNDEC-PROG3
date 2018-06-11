@@ -232,8 +232,11 @@ public class Main {
 			
 			System.out.println(pilotos.getApellido()+","+ pilotos.getNombres() + " - " + periodo.getYears());
 		}*/
-		gestorCiudad.crearCiudad(1,"La Rioja","5360");
+		gestorCiudad.crearCiudad(1,"La Rioja","5300");
+		gestorCiudad.crearCiudad(2,"Chilecito","5360");
 		gestorCiudad.mostrarCiudades();
+		
+		//System.out.println(gestorCiudad.listaCiudades);
 	}
 		
 }

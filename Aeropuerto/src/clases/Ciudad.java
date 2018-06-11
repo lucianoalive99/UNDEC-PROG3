@@ -35,8 +35,11 @@ public class Ciudad {
 		this.codigoPostal = codigoPostal;
 	}
 	
+	public Ciudad() {
+		// TODO Apéndice de constructor generado automáticamente
+	}
 	public String devolverCiudad() {
-		return getNombre();
+		return "El nombre de la ciudad es " + getNombre();
 	}
 
 }
