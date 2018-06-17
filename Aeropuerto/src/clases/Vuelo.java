@@ -15,15 +15,15 @@ import java.time.format.DateTimeFormatter;
 public class Vuelo {
 	
 	
-	String codigoVuelo;
-	Aeropuerto salida;
-	LocalDateTime fechaHoraSalida;
-	Aeropuerto arribo;
-	LocalDateTime fechaHoraArribo;
-	Aerolinea aerolinea;
-	List<Piloto> pilotos;
-	Avion avion;
-	List<Asignacion> pasajeros;
+	private String codigoVuelo;
+	private Aeropuerto salida;
+	private LocalDateTime fechaHoraSalida;
+	private Aeropuerto arribo;
+	private LocalDateTime fechaHoraArribo;
+	private Aerolinea aerolinea;
+	private List<Piloto> pilotos;
+	private Avion avion;
+	private List<Asignacion> pasajeros;
 	
 	
 	
@@ -121,6 +121,12 @@ public class Vuelo {
 		
 		long horasReales = TimeUnit.MINUTES.toHours(minutos);
 	    long minutosReales = TimeUnit.MINUTES.toMinutes(minutos) - TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(minutos));
+	    avion.acumularhorasdevuelo(horasReales*60);
+	    avion.acumularhorasdevuelo(minutosReales);
+	    
+	    
+	    
+	    
 	    return String.format(formato, horasReales, minutosReales);
 	}
 	

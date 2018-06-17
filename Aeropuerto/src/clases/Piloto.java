@@ -4,11 +4,12 @@ import java.time.LocalDate;
 
 public class Piloto {
 	
-	Integer idPiloto;
-	String apellido;
-	String nombres;
-	String documento;
-	LocalDate fechaNacimiento;
+	private Integer idPiloto;
+	private String apellido;
+	private String nombres;
+	private String documento;
+	private LocalDate fechaNacimiento;
+	private int acumuladorHoras = 0;
 	
 	
 	public Integer getIdPiloto() {
@@ -42,6 +43,14 @@ public class Piloto {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
+	public void acumularHorasDeVueloDelPiloto (int hvPiloto) {
+		this.acumuladorHoras+= hvPiloto;
+		
+	}
+	
+	public int getHoraVueloPiloto() {
+		return acumuladorHoras / 60;
+	}
 	
 	public Piloto(Integer idPiloto, String apellido, String nombres, String documento, LocalDate fechaNacimiento) {
 		super();

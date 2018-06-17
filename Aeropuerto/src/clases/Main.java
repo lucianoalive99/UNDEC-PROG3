@@ -17,7 +17,7 @@ public class Main {
 	//public static void CargarNuevoAeropuerto() {
 	public static void main(String[] args) {
 		GestorCiudad gestorCiudad = new GestorCiudad();
-		/*int numeroCiudades;
+		int numeroCiudades;
 		List<Asiento> asientoAvion1 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion2 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion3 = new ArrayList<Asiento>();
@@ -28,12 +28,13 @@ public class Main {
 		List<Aeropuerto> listaAeropuertos = new ArrayList<Aeropuerto>();
 		List<Piloto> listaDePilotos = new ArrayList<Piloto>();
 		List<Piloto> pilotosMayoresA40 = new ArrayList<Piloto>();
+		List<Avion> horasDeVueloPorAvion = new ArrayList<Avion>();
 		
-		GestorCiudad gestorCiudad = new GestorCiudad();
+		//GestorCiudad gestorCiudad = new GestorCiudad();
 		//CARGA DE DATOS PARA PRUEBA
 			//CARGA DE LAS CIUDADES
 		Ciudad ciudad1 = new Ciudad(1,"La Rioja","5360");
-		gestorCiudad.crearCiudad(1,"La Rioja","5360");
+		//gestorCiudad.crearCiudad(1,"La Rioja","5360");
 		System.out.println(gestorCiudad.mostrarCiudades());
 		Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
@@ -205,7 +206,7 @@ public class Main {
 			//DEVOLVER VUELO
 		
 		System.out.println(vuelo1.devolverVuelo());
-		System.out.println(vuelo1.duracionDeVueloMinutos());
+		//System.out.println(vuelo1.duracionDeVueloMinutos());
 
 
 			// pilotos mayores a 40
@@ -231,10 +232,31 @@ public class Main {
 			Period periodo = Period.between(fechaNac, ahora);
 			
 			System.out.println(pilotos.getApellido()+","+ pilotos.getNombres() + " - " + periodo.getYears());
-		}*/
-		gestorCiudad.crearCiudad(1,"La Rioja","5300");
+		}
+		
+		// HORA DE VUELOS DE LOS AVIONES
+		horasDeVueloPorAvion.add(avion1);
+		horasDeVueloPorAvion.add(avion2);
+		horasDeVueloPorAvion.add(avion3);
+		horasDeVueloPorAvion.add(avion4);
+		Collections.sort(horasDeVueloPorAvion, new compararHorasDeVuelo());
+		for(Avion avion : horasDeVueloPorAvion){
+			System.out.println(avion.getModelo() + " (" + avion.getMatricula() +") - "+avion.devolverHoraDeVuelo() + " Hs. de Vuelo");
+			
+		}
+		
+		Collections.sort(listaDePilotos, new compararHorasDeVueloPorPilotos());
+		for(Piloto PilotoOrdenado : listaDePilotos) {
+			LocalDate fechaNac = PilotoOrdenado.getFechaNacimiento();
+			LocalDate ahora = LocalDate.now();
+
+			Period periodo = Period.between(fechaNac, ahora);
+			System.out.println(PilotoOrdenado.getApellido()+", "+ PilotoOrdenado.getNombres() + " - " + periodo.getYears() + " Años - " + PilotoOrdenado.getHoraVueloPiloto() + " Hs. de Vuelo" );
+		}
+		
+		/*gestorCiudad.crearCiudad(1,"La Rioja","5300");
 		gestorCiudad.crearCiudad(2,"Chilecito","5360");
-		gestorCiudad.mostrarCiudades();
+		gestorCiudad.mostrarCiudades();*/
 		
 		//System.out.println(gestorCiudad.listaCiudades);
 	}

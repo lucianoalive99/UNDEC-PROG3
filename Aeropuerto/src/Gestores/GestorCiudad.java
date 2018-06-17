@@ -2,6 +2,7 @@ package Gestores;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import Clases.Ciudad;
 public class GestorCiudad {
@@ -9,6 +10,7 @@ public class GestorCiudad {
 	public List<Ciudad> listaCiudades = new ArrayList<Ciudad>();
 	private int iterador = 0;
 	private Iterator iter = listaCiudades.iterator();
+	//private ListIterator iteradorlista = listaCiudades.listIterator();
 	
 	public void crearCiudad(int pidCiudad, String pNombreCiudad, String pCodigoPostal) {
 		//
@@ -21,6 +23,8 @@ public class GestorCiudad {
 			System.out.println("El avion fue creado exitosamente.");
 			iterador++;
 		}
+		 
+		
 		//for (Ciudad misCiudades : listaCiudades){
 		while(iter.hasNext()) {
 			Ciudad misCiudades = (Ciudad)iter.next();
@@ -34,7 +38,6 @@ public class GestorCiudad {
 				Ciudad nuevaCiudad = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
 				listaCiudades.add(nuevaCiudad);
 				System.out.println("El avion fue creado exitosamente.");
-				iterador++;
 			}
 		}
 		
@@ -108,7 +111,6 @@ public class GestorCiudad {
 	public boolean borrarCiudadPorCoidgoPostal(String pCodigoPostalViejo) {
 		for (Ciudad misCiudades : listaCiudades) {
 			if(misCiudades.getCodigoPostal() == pCodigoPostalViejo) {
-				
 				return true;
 			}
 			else {

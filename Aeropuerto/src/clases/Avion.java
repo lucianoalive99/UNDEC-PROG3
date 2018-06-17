@@ -5,10 +5,12 @@ import java.util.List;
 public class Avion {
 	
 	
-	Integer idAvion;
-	String modelo;
-	String matricula;
-	List<Asiento> listaAsiento;
+	private Integer idAvion;
+	private String modelo;
+	private String matricula;
+	private List<Asiento> listaAsiento;
+	private int acumuladorHorasDeVuelo = 0;
+	
 	
 	
 	public Integer getIdAvion() {
@@ -43,5 +45,14 @@ public class Avion {
 		this.matricula = matricula;
 		this.listaAsiento = listaAsiento;
 	}
+	
+	public void acumularhorasdevuelo(long horasdevuelo) {
+		this.acumuladorHorasDeVuelo += horasdevuelo;
+	}
+	
+	public int devolverHoraDeVuelo() {
+		return acumuladorHorasDeVuelo/60;
+	}
 
+	
 }
