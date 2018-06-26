@@ -1,46 +1,60 @@
-package Gestores;
+package gestores;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-import Clases.Ciudad;
+import clases.Ciudad;
 public class GestorCiudad {
 
 	public List<Ciudad> listaCiudades = new ArrayList<Ciudad>();
+	//public List<Ciudad> listaCiudades = new ArrayList<Ciudad>();
 	private int iterador = 0;
-	private Iterator iter = listaCiudades.iterator();
+	//private Iterator iter = listaCiudades.iterator();
 	//private ListIterator iteradorlista = listaCiudades.listIterator();
 	
+	public GestorCiudad() {
+		
+	}
 	public void crearCiudad(int pidCiudad, String pNombreCiudad, String pCodigoPostal) {
 		//
 		//listaCiudades.add(nuevaCiudad);
 		boolean bandera = false;
 		
+		Ciudad nuevaCiudad = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
 		if(iterador == 0) {
-			Ciudad nuevaCiudad = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
+			//Ciudad nuevaCiudad = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
 			listaCiudades.add(nuevaCiudad);
-			System.out.println("El avion fue creado exitosamente.");
+			System.out.println("La ciudad fue creada exitosamente.");
 			iterador++;
+			
 		}
+		else
+		{
 		 
 		
-		//for (Ciudad misCiudades : listaCiudades){
-		while(iter.hasNext()) {
-			Ciudad misCiudades = (Ciudad)iter.next();
-			if(misCiudades.getIdCiudad() == pidCiudad || misCiudades.getCodigoPostal() == pCodigoPostal) {
-				bandera = true;
+			for (Ciudad misCiudades : listaCiudades){
+				//while(iter.hasNext()) {
+				//Ciudad misCiudades = (Ciudad)iter.next();
+				if(misCiudades.getIdCiudad() == nuevaCiudad.getIdCiudad() || misCiudades.getCodigoPostal() == nuevaCiudad.getCodigoPostal()) {
+					bandera = true;
+				}
 			}
-			if (bandera == true) {
-				System.out.println("No se puede crear el Avion, ya existe en el sistema");
+				if (bandera == true) {
+					System.out.println("No se puede crear la ciudad, ya existe en el sistema");
+					bandera = false;
+				}
+				else {
+					//Ciudad nuevaCiudad = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
+					listaCiudades.add(nuevaCiudad);
+					System.out.println("La Ciudad fue creada exitosamente.");
+					bandera = false;
+				
+				}
 			}
-			else {
-				Ciudad nuevaCiudad = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
-				listaCiudades.add(nuevaCiudad);
-				System.out.println("El avion fue creado exitosamente.");
-			}
-		}
 		
+		}
 		/*for (Ciudad misCiudades : listaCiudades) {
 			if(misCiudades.getIdCiudad() == pidCiudad || misCiudades.getCodigoPostal() == pCodigoPostal) {
 				Ciudad nuevaCiudad2 = new Ciudad(pidCiudad,pNombreCiudad,pCodigoPostal);
@@ -53,7 +67,7 @@ public class GestorCiudad {
 			}
 		}
 		return false;*/
-	}
+//	}
 	public String mostrarCiudades() {
 		for(Ciudad misCiudades : listaCiudades) {
 			System.out.println(misCiudades.getNombre());

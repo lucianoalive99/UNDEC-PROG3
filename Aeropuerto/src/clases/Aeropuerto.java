@@ -1,10 +1,10 @@
-package Clases;
+package clases;
 
 public class Aeropuerto {
-	Integer idAeropuerto;
-	String nombre;
-	Ciudad ciudad;
-	String codigo;
+	private Integer idAeropuerto;
+	private String nombre;
+	private Ciudad ciudad;
+	private String codigo;
 	
 	
 	public Integer getIdAeropuerto() {

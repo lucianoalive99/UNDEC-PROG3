@@ -1,4 +1,4 @@
-package Gestores;
+package gestores;
 
 public class GestorPasajero {
 

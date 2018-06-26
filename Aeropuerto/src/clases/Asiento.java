@@ -1,8 +1,8 @@
-package Clases;
+package clases;
 
 public class Asiento {
-	Integer idAsiento;
-	String numeroAsiento;
+	private Integer idAsiento;
+	private String numeroAsiento;
 	
 	
 	public Integer getIdAsiento() {

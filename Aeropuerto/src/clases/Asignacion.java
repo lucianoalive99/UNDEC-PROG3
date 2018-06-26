@@ -1,9 +1,9 @@
-package Clases;
+package clases;
 
 public class Asignacion {
-	Pasajero pasajero;
-	Asiento	asiento;
-	String codigoAsignacion;
+	private Pasajero pasajero;
+	private Asiento	asiento;
+	private String codigoAsignacion;
 	
 	
 	

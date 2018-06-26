@@ -10,9 +10,9 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
-import Clases.Avion;
-import Clases.Vuelo;
-import Gestores.GestorAvion;
+import clases.Avion;
+import clases.Vuelo;
+import gestores.GestorAvion;
 
 class GestorAvionTest {
 

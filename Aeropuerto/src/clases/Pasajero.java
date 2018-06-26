@@ -1,13 +1,13 @@
-package Clases;
+package clases;
 
 public class Pasajero {
 
 
-	Integer idPasajero;
-	String CUIL;
-	String apellido;
-	String nombres;
-	String telefono;
+	private Integer idPasajero;
+	private String CUIL;
+	private String apellido;
+	private String nombres;
+	private String telefono;
 	
 	
 

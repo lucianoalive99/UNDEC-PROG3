@@ -1,4 +1,4 @@
-package Clases;
+package clases;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,8 +7,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import gestores.GestorAvion;
+import gestores.GestorCiudad;
+
 import java.util.Collections;
-import Gestores.GestorCiudad;
 
 
 public class Main {
@@ -17,6 +20,7 @@ public class Main {
 	//public static void CargarNuevoAeropuerto() {
 	public static void main(String[] args) {
 		GestorCiudad gestorCiudad = new GestorCiudad();
+		GestorAvion gestoravion = new GestorAvion();
 		int numeroCiudades;
 		List<Asiento> asientoAvion1 = new ArrayList<Asiento>();
 		List<Asiento> asientoAvion2 = new ArrayList<Asiento>();
@@ -33,8 +37,10 @@ public class Main {
 		//GestorCiudad gestorCiudad = new GestorCiudad();
 		//CARGA DE DATOS PARA PRUEBA
 			//CARGA DE LAS CIUDADES
-		Ciudad ciudad1 = new Ciudad(1,"La Rioja","5360");
-		//gestorCiudad.crearCiudad(1,"La Rioja","5360");
+		//Ciudad ciudad1 = new Ciudad(1,"La Rioja","5360");
+		gestorCiudad.crearCiudad(1,"La Rioja","5360");
+		gestorCiudad.crearCiudad(2,"Buenos Aires","1000");
+		gestorCiudad.crearCiudad(2,"Buenos Aires","1000");
 		System.out.println(gestorCiudad.mostrarCiudades());
 		Ciudad ciudad2 = new Ciudad(2,"Buenos Aires","1000");
 		Ciudad ciudad3 = new Ciudad(3,"Mendoza","5500");
@@ -45,12 +51,12 @@ public class Main {
 		listaCiudades.add(ciudad3);
 		listaCiudades.add(ciudad4);
 			//CARGA DE LOS AEROPUERTOS
-		Aeropuerto aeropuerto1 = new Aeropuerto(1,"Aeropuerto Capitán Vicente Almandos Amonacid",ciudad1,"IRJ");
+		//Aeropuerto aeropuerto1 = new Aeropuerto(1,"Aeropuerto Capitán Vicente Almandos Amonacid",ciudad1,"IRJ");
 		Aeropuerto aeropuerto2 = new Aeropuerto(2,"Aeropuerto Buenos Aires Jorge Newbery",ciudad2,"AEP");
 		Aeropuerto aeropuerto3 = new Aeropuerto(2,"Aeropuerto El Plumerillo",ciudad3,"MDZ");
 		Aeropuerto aeropuerto4 = new Aeropuerto(2,"Aeropuerto Benjamín Matienzo",ciudad4,"TUC");
 			//CARGA LISTA DE AEROPUERTOS
-		listaAeropuertos.add(aeropuerto1);
+		//listaAeropuertos.add(aeropuerto1);
 		listaAeropuertos.add(aeropuerto2);
 		listaAeropuertos.add(aeropuerto3);
 		listaAeropuertos.add(aeropuerto4);
@@ -174,10 +180,19 @@ public class Main {
 		
 				
 			//CARGA DE AVIONES
-		Avion avion1 = new Avion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
+		gestoravion.crearAvion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
+		gestoravion.crearAvion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
+		gestoravion.crearAvion(2,"Airbus A330-223","LV-FNI",asientoAvion2);
+		gestoravion.crearAvion(2,"Airbus A330-223","LV-FNI",asientoAvion2);
+		gestoravion.crearAvion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
+		gestoravion.crearAvion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
+		gestoravion.crearAvion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
+		gestoravion.crearAvion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
+		
+		/*Avion avion1 = new Avion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
 		Avion avion2 = new Avion(2,"Airbus A330-223","LV-FNI",asientoAvion2);
 		Avion avion3 = new Avion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
-		Avion avion4 = new Avion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
+		Avion avion4 = new Avion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);*/
 		
 			//ASIGNACION DE LOS PASAJEROS
 		Asignacion asignacion1 = new Asignacion(pasajero1,asientoAvion4.set(1, asiento43),"AR2443100420182012345678443");
@@ -186,7 +201,7 @@ public class Main {
 		pasajeros2443.add(asignacion1);
 		pasajeros2443.add(asignacion2);
 			//CARGA DE VUELOS
-		Vuelo vuelo1 = new Vuelo("AR2443",aeropuerto1,LocalDateTime.of(2018, 04, 10, 21, 10),aeropuerto2,LocalDateTime.of(2018, 04, 10, 22, 45),aerolinea2,piloto2443,avion4,pasajeros2443);
+		//Vuelo vuelo1 = new Vuelo("AR2443",aeropuerto1,LocalDateTime.of(2018, 04, 10, 21, 10),aeropuerto2,LocalDateTime.of(2018, 04, 10, 22, 45),aerolinea2,piloto2443,avion4,pasajeros2443);
 		
 		
 			//MUESTRA DE LAS CIUDADES
@@ -205,7 +220,7 @@ public class Main {
 		
 			//DEVOLVER VUELO
 		
-		System.out.println(vuelo1.devolverVuelo());
+		//System.out.println(vuelo1.devolverVuelo());
 		//System.out.println(vuelo1.duracionDeVueloMinutos());
 
 
@@ -235,10 +250,10 @@ public class Main {
 		}
 		
 		// HORA DE VUELOS DE LOS AVIONES
-		horasDeVueloPorAvion.add(avion1);
+		/*horasDeVueloPorAvion.add(avion1);
 		horasDeVueloPorAvion.add(avion2);
 		horasDeVueloPorAvion.add(avion3);
-		horasDeVueloPorAvion.add(avion4);
+		horasDeVueloPorAvion.add(avion4);*/
 		Collections.sort(horasDeVueloPorAvion, new compararHorasDeVuelo());
 		for(Avion avion : horasDeVueloPorAvion){
 			System.out.println(avion.getModelo() + " (" + avion.getMatricula() +") - "+avion.devolverHoraDeVuelo() + " Hs. de Vuelo");
