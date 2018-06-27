@@ -180,19 +180,20 @@ public class Main {
 		
 				
 			//CARGA DE AVIONES
-		gestoravion.crearAvion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
-		gestoravion.crearAvion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
-		gestoravion.crearAvion(2,"Airbus A330-223","LV-FNI",asientoAvion2);
-		gestoravion.crearAvion(2,"Airbus A330-223","LV-FNI",asientoAvion2);
-		gestoravion.crearAvion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
-		gestoravion.crearAvion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
-		gestoravion.crearAvion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
-		gestoravion.crearAvion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
-		
-		/*Avion avion1 = new Avion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
+		Avion avion1 = new Avion(1,"Airbus A340-313X","LV-FPV",asientoAvion1);
 		Avion avion2 = new Avion(2,"Airbus A330-223","LV-FNI",asientoAvion2);
 		Avion avion3 = new Avion(3,"Boeing 737-8MB","LV-FYK",asientoAvion3);
-		Avion avion4 = new Avion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);*/
+		Avion avion4 = new Avion(4,"Embraer ERJ-190-100AR","LV-CIH",asientoAvion4);
+		
+		gestoravion.crearAvion(avion1);
+		gestoravion.crearAvion(avion1);
+		gestoravion.crearAvion(avion2);
+		gestoravion.crearAvion(avion2);
+		gestoravion.crearAvion(avion3);
+		gestoravion.crearAvion(avion3);
+		gestoravion.crearAvion(avion4);
+		gestoravion.crearAvion(avion4);
+		
 		
 			//ASIGNACION DE LOS PASAJEROS
 		Asignacion asignacion1 = new Asignacion(pasajero1,asientoAvion4.set(1, asiento43),"AR2443100420182012345678443");
