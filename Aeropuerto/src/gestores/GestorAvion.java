@@ -16,16 +16,16 @@ import clases.Vuelo;
 
 public class GestorAvion {
 
-	private LinkedList<Avion> listaAviones = new LinkedList<Avion>();	
+	private Collection<Avion> listaAviones = new LinkedList<Avion>();	
 	private int iterador = 0;
 	private boolean bandera = false;
 	
 
-	public GestorAvion(LinkedList<Avion> linkedList) {
+	public GestorAvion(Collection<Avion> linkedList) {
 		linkedList.addAll(listaAviones);
 	}
 
-	public void GestorAvion() {
+	public GestorAvion() {
 		
 	}
 	
@@ -67,7 +67,7 @@ public class GestorAvion {
 		
 	}
 
-	public LinkedList<Avion> getColeccionAviones() {
+	public Collection<Avion> getColeccionAviones() {
 		return listaAviones;
 	}
 
