@@ -9,11 +9,16 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
+import clases.Base;
+import clases.Cubierta;
+import clases.Pedido;
+import clases.Pizza;
+
 class PedidoUnitTest {
 
 	@Test
 	void instanciarPedido_pedidoSinPizza_ReturnFalse() {
-		Pizza pizzaNapolitana=new Pizza("Napolitana",100.80d,new Base("Masa tipo"),cubiertaNapolitana());
+		Pizza unaPizza=new Pizza("Napolitana",100.80,new Base("Masa tipo"),cubiertaNapolitana());
 		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),unaPizza);
 		
 		assertEquals(1, unPedido.getPizzas().size());
@@ -21,10 +26,10 @@ class PedidoUnitTest {
 	
 	@Test
 	void agregarPizza_pedidoConPizza_incrementaColeccion() {
-		Pizza pizzaNapolitana=new Pizza("Napolitana",100.80d,new Base("Masa tipo"),cubiertaNapolitana());
+		Pizza unaPizza=new Pizza("Napolitana",100.80,new Base("Masa tipo"),cubiertaNapolitana());
 		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),unaPizza);
 		
-		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25d, new Base("Masa tipo"), cubiertaFugazzeta());
+		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25, new Base("Masa tipo"), cubiertaFugazzeta());
 		unPedido.agregarPizza(pizzaFugazzeta);
 		
 		assertEquals(2, unPedido.getPizzas().size());

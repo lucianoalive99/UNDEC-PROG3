@@ -7,6 +7,15 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import org.junit.Test;
+
+import gestores.GestorPedido;
+import clases.Base;
+import clases.Cubierta;
+import clases.Pedido;
+import clases.Pizza;
+
+
 class GestorPedidoUnitTest {
 
 	@Test
@@ -50,27 +59,27 @@ class GestorPedidoUnitTest {
 	void calcularPrecio_pedidoCompleto_returnsPrecio() {
 		Pedido unPedido = factoryPedido();
 		
-		assertEquals(251.05d, unPedido.importeTotal(),2);
+		assertEquals(251.05, unPedido.importeTotal(),2);
 	}
 	
 	
 	private Pedido factoryPedido() {
-		Pizza pizzaNapolitana = new Pizza("Napolitana", 100.80d, new Base("Masa tipo"), cubiertaNapolitana());
-		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25d, new Base("Masa tipo"), cubiertaFugazzeta());
+		Pizza pizzaNapolitana = new Pizza("Napolitana", 100.80, new Base("Masa tipo"), cubiertaNapolitana());
+		Pizza pizzaFugazzeta = new Pizza("Fugazzeta", 150.25, new Base("Masa tipo"), cubiertaFugazzeta());
 		
-		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),pizzaNapolitana);
+		Pedido unPedido = new Pedido("Perez, Juan","San Martin 123",0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 		unPedido.agregarPizza(pizzaFugazzeta);
 
 		return unPedido;
 	}
 	
 	private Pedido factoryPedidoIncompleto() {
-		return new Pedido("Perez, Juan","San Martin 123",0d,LocalDate.of(2018, 07, 02),null);
+		return new Pedido("Perez, Juan","San Martin 123",0,LocalDate.of(2018, 07, 02),null);
 	}
 	
 
 	private Pedido factoryPedidoSinCliente() {
-		return new Pedido(null,null,0d,LocalDate.of(2018, 07, 02),pizzaNapolitana);
+		return new Pedido(null,null,0,LocalDate.of(2018, 07, 02),pizzaNapolitana);
 	}
 
 
