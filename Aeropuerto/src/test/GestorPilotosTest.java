@@ -9,8 +9,9 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
-import Clases.Piloto;
-import Clases.Vuelo;
+import clases.Piloto;
+import clases.Vuelo;
+import gestores.GestorPiloto;
 
 class GestorPilotosTest {
 

@@ -33,7 +33,7 @@ public class Aeropuerto {
 	}
 	
 	
-	public Aeropuerto(Integer idAeropuerto, String nombre, Ciudad ciudad, String codigo) {
+	public Aeropuerto(Integer idAeropuerto, String nombre, String codigo, Ciudad ciudad) {
 		this.idAeropuerto = idAeropuerto;
 		this.nombre = nombre;
 		this.ciudad = ciudad;
@@ -54,6 +54,10 @@ public class Aeropuerto {
 	
 	public Ciudad mostrarCiudadAeropuerto() {
 		return getCiudad();
+	}
+	public String showDenomination() {
+		// TODO Apéndice de método generado automáticamente
+		return getNombre() + " - " + ciudad.devolverCiudad() + " - " + getCodigo();
 	}
 
 }

@@ -6,11 +6,11 @@ import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 
-import Clases.Aerolinea;
-import Clases.Aeropuerto;
-import Clases.Avion;
-import Clases.Ciudad;
-import Clases.Vuelo;
+import clases.Aerolinea;
+import clases.Aeropuerto;
+import clases.Avion;
+import clases.Ciudad;
+import clases.Vuelo;
 
 class VueloTest {
 

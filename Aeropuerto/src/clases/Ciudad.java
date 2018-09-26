@@ -39,7 +39,7 @@ public class Ciudad {
 		// TODO Apéndice de constructor generado automáticamente
 	}
 	public String devolverCiudad() {
-		return "El nombre de la ciudad es " + getNombre();
+		return getNombre();
 	}
 
 }

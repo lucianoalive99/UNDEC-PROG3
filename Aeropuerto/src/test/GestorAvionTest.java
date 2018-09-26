@@ -53,11 +53,12 @@ class GestorAvionTest {
 	}
 
 	@Test
-	void crearAvion_yaExisteAvionPorMatricula() {
+	void crearAvion_yaExisteAvionPorMatricula_devuelveFalso() {
 
 		// Arrange
 		GestorAvion elGestor = new GestorAvion(new LinkedList<Avion>());
 		elGestor.getColeccionAviones().add(new Avion(1, "Airbus A340-313X", "LV-FPV", null));
+		
 		int avionesEnColeccion = elGestor.getColeccionAviones().size();
 		Avion unAvion = new Avion(2, "Boeing 737-8MB", "LV-FPV", null);
 

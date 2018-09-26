@@ -30,40 +30,65 @@ public class GestorAvion {
 	}
 	
 	public boolean crearAvion(Avion pAvion) {
-		//Avion nuevoavion = new Avion(pidAvion,pModelo, pMatricula, pListaAsiento);
+		
+		for (Avion avion : listaAviones) {
+			if(pAvion.getMatricula().equals(avion.getMatricula()) || pAvion.getIdAvion().equals(avion.getIdAvion()))
+			{
+				return false;
+			}
+		}
+		listaAviones.add(pAvion);
+		return true;
+		
+		/*//Avion nuevoavion = new Avion(pidAvion,pModelo, pMatricula, pListaAsiento);
 		if(iterador == 0) {
 			listaAviones.add(pAvion);
 			return true;
 			
 		}
-		else
-		{
+		//else
+		//{
 		 
 			for (Avion aviones : listaAviones){
 				
-				if(aviones.getIdAvion() == pAvion.getIdAvion() || aviones.getMatricula() == pAvion.getMatricula()) {
-					bandera = true;
+				if(aviones.getIdAvion() == pAvion.getIdAvion()) {
+					return false;
+				}
+				else {
+					
+				
+					if(aviones.getMatricula() == pAvion.getMatricula()) {
+						return false;
+					
+					}
 				}
 			}
+			/*}
 			if (bandera == true) {
 				bandera = false;
 				return false;
 				
+				
 			}
-			else {
+			//else {
 					
 				if(pAvion.getListaAsiento().isEmpty()) {
 					return false;
+					//return false;
 						
 				}
 				else {
 					listaAviones.add(pAvion);
 					return true;
+					//return true;
 				}
 					
 				
 			}
-		}
+		//}
+		//}
+		
+		//return false;*/
 		
 	}
 

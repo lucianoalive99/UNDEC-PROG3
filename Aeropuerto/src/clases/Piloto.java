@@ -1,6 +1,7 @@
 package clases;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Piloto {
 	
@@ -59,6 +60,16 @@ public class Piloto {
 		this.nombres = nombres;
 		this.documento = documento;
 		this.fechaNacimiento = fechaNacimiento;
+	}
+	public String getSurnameAndName() {
+		// TODO Apéndice de método generado automáticamente
+		return getApellido() + ", " + getNombres();
+	}
+	public int getAge(LocalDate of) {
+		// TODO Apéndice de método generado automáticamente
+		
+		Period periodo = Period.between(getFechaNacimiento(), of);
+		return periodo.getYears();
 	}
 	
 	
